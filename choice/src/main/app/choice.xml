@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
     <http:listener-config name="HTTP_Listener_Configuration2" host="localhost" port="8300" doc:name="HTTP Listener Configuration"/>
     <flow name="choiceFlow">
-        <http:listener config-ref="HTTP_Listener_Configuration2" path="/choicetest" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_Listener_Configuration2" path="/choice1" doc:name="HTTP"/>
         <set-session-variable variableName="method" value="#[message.inboundProperties,'http.method']" doc:name="Session Variable" mimeType="text/plain"/>
         <logger message="#[sessionVars.method]" level="INFO" doc:name="Logger"/>
         <choice doc:name="Choice">
